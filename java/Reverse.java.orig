@@ -1,0 +1,31 @@
+class Reverse {
+    public static void main(String[] args) {
+        System.out.print("Enter the string: ");
+        String input = System.console().readLine();
+        char[] arr   = input.toCharArray();
+        String outString = FindNChange(arr);
+
+        System.out.println("The string is: " + outString);
+    }
+    public static String FindNChange(char[] input) {
+        int startPos = 0;
+        int endPos   = input.length - 1;
+
+        while (startPos < endPos) {
+            if (Character.isLetter(input[startPos])) {
+                if (Character.isLetter(input[endPos])) {
+                    char tmp = input[startPos];
+                    input[startPos] = input[endPos];
+                    input[endPos]   = tmp;
+                    startPos++;
+                    endPos--;
+                } else {
+                    endPos--;
+                }
+            } else {
+                startPos++;
+            }
+        }
+        return new String(input);
+    }
+}

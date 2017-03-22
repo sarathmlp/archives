@@ -1,0 +1,46 @@
+Shell script execution from commandline
+----------------------------------------
+#!/usr/bin/sh
+telnet 172.16.69.116 <<!
+user
+password
+ls
+exit
+!
+
+Some of the commands won't be executed in this case
+Solution is to use like this to get finer flow
+{
+sleep 5
+echo user
+sleep 3
+echo password
+sleep 3
+echo ls
+sleep 5
+echo exit
+} | telnet 172.16.65.209
+
+Eg: for 10 CER/CEA
+------------------- 
+for ((i=0;i<10;i++)); do ./Run.client <<!
+1
+99
+9
+!
+;  done
+
+More neat approach
+-------------------
+#!/bin/bash
+for ((i=0;i<10;i++))
+do
+    {
+        sleep 1;
+        echo 1
+        sleep 1;
+        echo 99
+        sleep 1
+        echo 9
+    } | ./Run.client
+done

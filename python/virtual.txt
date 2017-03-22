@@ -1,0 +1,5 @@
+$ mkdir myproject
+$ cd myproject
+$ virtualenv venv / virtualenv -p python3.5 venv
+$ . venv/bin/activate
+$ pip install Flask

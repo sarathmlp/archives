@@ -1,0 +1,6 @@
+find . -name gy_r10 >> interface.list
+find . -name sd_r10 >> interface.list
+find . -name gy_rel_10 >> interface.list
+find . -name sd_r11 >> interface.list
+interfacelist=`cat interface.list`
+for dirs in $interfacelist ; do find $dirs -print >> interface.files.list; done

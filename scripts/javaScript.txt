@@ -1,0 +1,15 @@
+// Javascript to get the form details, this will return the first form
+// details for more change the array index
+// Save the bookmark of the page in properties, in location paste the script followed by
+// javascript:
+var els = document.forms[0].getElementsByTagName('input');
+
+var iCount = 0;
+var str;
+
+for (var i = 0, length = els.length; i < length; i++)
+{
+        var el = els[i];
+        str = el.name + "-" + el.value;
+		console.log(str);
+}
