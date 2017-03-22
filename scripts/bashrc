@@ -1,0 +1,186 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+# For 256 color
+#if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+#    export TERM='xterm-256color'
+#else
+#    export TERM='xterm-color'
+#fi
+
+# RHEL Colors
+#LS_COLORS="$LS_COLORS:fi=00:di=00;34:ln=00;36:pi=40;33:so=00;35:bd=40;33;01:\
+#cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:ex=00;32:*.cmd=00;32:*.exe=00;32:\
+#*.com=00;32:*.btm=00;32:*.bat=00;32:*.sh=00;32:*.csh=00;32:*.tar=00;31:\
+#*.tgz=00;31:*.arj=00;31:*.taz=00;31:*.lzh=00;31:*.zip=00;31:*.z=00;31:\
+#*.Z=00;31:*.gz=00;31:*.bz2=00;31:*.bz=00;31:*.tz=00;31:*.rpm=00;31:\
+#*.cpio=00;31:*.jpg=00;35:*.gif=00;35:*.bmp=00;35:*.xbm=00;35:*.xpm=00;35:\
+#*.png=00;35:*.tif=00;35:"
+LS_COLORS="$LS_COLORS:rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tgz=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lz=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.bz=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.rar=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:"
+# User specific aliases and functions
+# Custom by boss
+
+# User specific aliases and functions
+###########################################################
+#        Promt Related
+###########################################################
+#
+# 1m for bright
+# 2m for normal ??
+# 4m for underline
+# 5m for blink
+# 7m inverse colors (background and foreground swapped)
+
+DEFAULT="\[\e[0m\]"
+BLACK="\[\e[0;30m\]"
+BLACKL="\[\e[1;30m\]"
+RED="\[\e[0;31m\]"
+REDL="\[\e[1;31m\]"
+GREEN="\[\e[0;32m\]"
+GREENL="\[\e[1;32m\]"
+YELLOW="\[\e[0;33m\]"
+YELLOWL="\[\e[1;33m\]"
+BLUE="\[\e[0;34m\]"
+BLUEL="\[\e[1;34m\]"
+PINK="\[\e[0;35m\]"
+PINKL="\[\e[1;35m\]"
+MAGENTA="\[\e[0;36m\]"
+MAGENTAL="\[\e[1;36m\]"
+WHITE="\[\e[0;36m\]"
+WHITEL="\[\e[1;36m\]"
+
+#export PS1="${DEFAULT}\u${GREEN}@${DEFAULT}\W${DEFAULT}\$ ${DEFAULT}"
+#export PS1="\\[\e[1;38;5;0m\e[48;5;39m\u \e[0;38;5;39m\e[48;5;240m\e[48;5;240m\e[1;38;5;254m \W $ \e[48;5;255m\e[0;38;5;240m\e[0m "
+#export PS1="\[\033[0;37m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;31m\]\342\234\227\[\033[0;37m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[0;31m\]\h'; else echo '\[\033[0;33m\]\u\[\033[0;37m\]@\[\033[0;96m\]\h'; fi)\[\033[0;37m\]]\342\224\200[\[\033[0;32m\]\W\[\033[0;37m\]]\n\[\033[0;37m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]"
+#export PS1="\[\033[0;30m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;31m\]\342\234\227\[\033[0;30m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[0;30m\]\h'; else echo '\[\033[0;30m\]\u\[\033[0;96m\]@\[\033[0;30m\]\h'; fi)\[\033[0;30m\]]\342\224\200[\[\033[0;96m\]\W\[\033[0;30m\]]\n\[\033[0;30m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]"
+#export PS1="\[\033[0;96m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;31m\]\342\234\227\[\033[0;96m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[0;96m\]\h'; else echo '\[\033[0;96m\]\u\[\033[0;96m\]@\[\033[0;96m\]\h'; fi)\[\033[0;96m\]]\342\224\200[\[\033[0;96m\]\W\[\033[0;96m\]]\n\[\033[0;96m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]"
+#export PS1=$'\\[\e[34m\\][ \@ ] \[\e[0m\\]\u\[\e[0m\\] \u2192 \W \\[\e[36m\\]\u2605 \\[\e[0m\\]'
+#while sleep 1;do tput sc;tput cup 0 $(($(tput cols)-11));echo -e "\e[31m`date +%r`\e[39m";tput rc;done &
+
+export MYPS='$(echo -n "${PWD/#$HOME/~}" | awk -F "/" '"'"'{
+if (length($0) > 14) { if (NF>4) print $1 "/" $2 "/.../" $(NF-1) "/" $NF;
+else if (NF>3) print $1 "/" $2 "/.../" $NF;
+else print $1 "/.../" $NF; }
+else print $0;}'"'"')'
+export PS1='\[\e[38;5;202m\]\[\e[38;5;245m\]\u\[\e[00m\]@\[\e[38;5;172m\]\h\[\e[00m\]:\[\e[38;5;202m\]\[\e[38;5;245m\] $(eval "echo ${MYPS}")\[\e[00m\]⟫ '
+
+
+export CVSROOT=:pserver:vsarath@172.16.23.16:/export/home/.indiacvsroot
+############### End Promt Related ######################
+
+########################################################
+#                   Aliases
+########################################################
+#Enable X Forwarding
+#alias ssh="ssh -Y"
+cd
+set -o vi 
+bind -m vi-insert C-x:vi-movement-mode
+export EDITOR=vim
+export CSCOPE_EDITOR=vim
+alias cow='cowsay'
+alias c='/usr/bin/clear'
+alias vi='vim'
+alias cp='cp -vi'
+alias mv='mv -vi'
+alias ll='ls -lrthF --color=auto'
+alias grep='grep --color=auto'
+
+conv()
+{
+    case "$1" in
+        "d2h") echo "ibase=A;obase=16;$2" | bc;;
+        "d2b") echo "ibase=A;obase=2;$2" | bc;;
+        "d2o") echo "ibase=A;obase=8;$2" | bc;;
+        "d2d") echo "ibase=A;obase=A;$2" | bc;;
+        "h2d") echo "ibase=16;obase=A;$2" | bc;;
+        "h2b") echo "ibase=16;obase=2;$2" | bc;;
+        "h2o") echo "ibase=16;obase=8;$2" | bc;;
+        "h2h") echo "ibase=16;obase=10;$2" | bc;;
+        "b2d") echo "ibase=2;obase=A;$2" | bc;;
+        "b2h") echo "ibase=2;obase=10000;$2" | bc;;
+        "b2o") echo "ibase=2;obase=8;$2" | bc;;
+        "b2b") echo "ibase=2;obase=2;$2" | bc;;
+        "o2b") echo "ibase=8;obase=2;$2" | bc;;
+        "o2d") echo "ibase=8;obase=A;$2" | bc;;
+        "o2h") echo "ibase=8;obase=20;$2" | bc;;
+        "o2o") echo "ibase=8;obase=8;$2" | bc;;
+    esac
+}
+
+update()
+{
+    ctags -R --c++-kinds=+p --fields=+iaS --extra=+q $1
+}
+
+rm() 
+{
+    if [[ $1 == "-rf" ]];
+        then cow `echo 'wat d fish..'`;
+    else command rm -vi "$@";
+    fi;
+}
+
+vi()
+{
+    echo $@ | grep ':' > /dev/null 2>&1
+    if [ "$?" -eq "0" ]; then
+        R1=$(echo $@ | tr ':' ' ')
+        R2=$(echo $R1 | cut -d ' ' -f 1)
+        NUM=$(echo $R1 | cut -d ' ' -f 2)
+        R3=' +'$(echo $R1 | cut -d ' ' -f 2)
+        re='^[0-9]+$'
+        if ! [[ $NUM =~ $re ]] ; then
+            # not a number
+            command vim $R2
+        else
+            command vim $R2$R3
+        fi
+    else
+        command vim "$@"
+    fi
+}
+
+sudo() 
+{
+    if [[ $1 == "rm" && $2 == "-rf" ]];
+        then echo 'Fish';
+    else command sudo "$@";
+    fi;
+}
+
+main()
+{
+    cd /home/sarath/sandbox/B-DRE-0340-00
+    . ./export.sh; . ./profile.sh
+    cowsay "DRE..."
+    echo -en "\a"
+}
+
+cvsstat()
+{
+    cvs status | grep -iv "up-to-date" | grep -v 'Repository' | \
+    grep File  > cvs_stats
+}
+
+update()
+{
+    rm -f cscope.out cscope.in.out cscope.po.out
+    rm -f tags
+    echo "Doing ctags"
+    #ctags -R --sort=no --c++-kinds=+p --fields=+iaS --extra=+q -I EXTERN=extern --exclude=working/* --langmap=c:+.x --totals .
+    ctags -R --sort=no --c++-kinds=+p --fields=+iaS --extra=+q --totals .
+    # To avoid multiple prototypes and get omnicomplete work with C
+    ctags -R --fields=+ia --extra=q .
+    echo "Doing cscope"
+    cscope -qR
+}
+
+mnt()
+{
+    sshfs root@172.27.4.249:/root/sarath mnt/ -o reconnect
+}
+
